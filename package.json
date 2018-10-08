@@ -2,7 +2,6 @@
     "name": "work-with-webpack",
     "version": "1.0.0",
     "description": "a standard webpack workdir",
-    "main": "webpack.config.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },

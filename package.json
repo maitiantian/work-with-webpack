@@ -1,0 +1,22 @@
+{
+    "name": "work-with-webpack",
+    "version": "1.0.0",
+    "description": "a standard webpack workdir",
+    "main": "webpack.config.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/maitiantian/work-with-webpack.git"
+    },
+    "keywords": [
+        "webpack"
+    ],
+    "author": "maitiantian",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/maitiantian/work-with-webpack/issues"
+    },
+    "homepage": "https://github.com/maitiantian/work-with-webpack#readme"
+}

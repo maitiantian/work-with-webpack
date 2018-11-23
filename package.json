@@ -3,7 +3,9 @@
     "version": "1.0.0",
     "description": "a standard webpack workdir",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "webpack-dev-server --open --config webpack.dev.js",
+        "build": "webpack --config webpack.prod.js"
     },
     "repository": {
         "type": "git",
@@ -17,5 +19,19 @@
     "bugs": {
         "url": "https://github.com/maitiantian/work-with-webpack/issues"
     },
-    "homepage": "https://github.com/maitiantian/work-with-webpack#readme"
+    "homepage": "https://github.com/maitiantian/work-with-webpack#readme",
+    "devDependencies": {
+        "babel-loader": "^8.0.4",
+        "clean-webpack-plugin": "^1.0.0",
+        "css-loader": "^1.0.1",
+        "csv-loader": "^3.0.2",
+        "file-loader": "^2.0.0",
+        "html-webpack-plugin": "^3.2.0",
+        "sass-loader": "^7.1.0",
+        "style-loader": "^0.23.1",
+        "url-loader": "^1.1.2",
+        "webpack": "^4.26.0",
+        "webpack-merge": "^4.1.4",
+        "xml-loader": "^1.2.1"
+    }
 }

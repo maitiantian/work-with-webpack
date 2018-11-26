@@ -1,5 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');       // 用于导入在内存中自动生成的index页面的插件
-const CleanWebpackPlugin = require('clean-webpack-plugin');     
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 // 因为webpack是基于Node构建的，所以webpack支持所有Node API和语法；
@@ -23,6 +23,20 @@ module.exports = {
     output: {
         filename: '[name].bundle.js',
         path: `${__dirname}/dist/`
+    },
+
+    optimization: {
+        runtimeChunk: 'single',
+        // 使用SplitChunks可以将多个入口文件中重复的依赖模块分离到单独的chunk中
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendors',
+                    chunks: 'all'
+                }
+            }
+        }
     },
 
     devServer: {
@@ -50,7 +64,7 @@ module.exports = {
 
         // 许多library将通过与process.env.NODE_ENV环境变量关联，以决定library中应该引用哪些内容，
         // 生产环境中，一些library为了使调试更容易，会添加额外的日志记录(log)和测试(test)，
-        // 开发环境中，一些library可能针对具体用户的环境进行代码优化，从而删除或添加一些重要代码。
+        // 开发环境中，一些library可能针对具体用户的环境进行代码优化，从而删除或添加一些重要代码，减小bundle体积。
         // 另外，任何位于/src的本地代码都可以访问到process.env.NODE_ENV。
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('development')
@@ -91,7 +105,7 @@ module.exports = {
         //     '*.css',
         // ],
         // 从webpack 4开始，设置"mode"为"production"即可启用UglifyJSPlugin压缩输出
-        // 命令行接口使用--optimize-minimize参数
+        // 命令行接口使用--optimize-minimize参数启用UglifyJSPlugin
     },
     resolve: {
         extensions: ['.js', '.jsx', '.json', '.vue'],   // 表示这几个文件的后缀名可以省略不写

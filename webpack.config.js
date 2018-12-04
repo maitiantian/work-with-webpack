@@ -84,7 +84,7 @@ module.exports = {
             // 可以在css-loader之后，通过?追加参数，
             // 其中，有个固定的参数modules，表示为普通的CSS样式表启用模块化。
             { test: /\.css$/, use: ['style-loader', 'css-loader'] },    // 打包处理CSS样式表的loader
-            { test: /\.sass$/, use: ['style-loader', 'css-loader?modules&localIdentName=[path][name]-[local]-[hash:5]', 'sass-loader'] },    // 打包处理sass文件的loader
+            { test: /\.scss$/, use: ['style-loader', 'css-loader?modules&localIdentName=[path][name]-[local]-[hash:5]', 'sass-loader'] },    // 打包处理scss文件的loader
 
             // file-loader 和 url-loader 可以接收并加载任何文件，然后将其输出到构建目录
             { test: /\.(png|svg|jpg|gif)$/, use: 'file-loader' },

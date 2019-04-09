@@ -24,7 +24,7 @@ module.exports = {
     // }
 
     output: {
-        filename: '[name].bundle.js',
+        filename: '[name].[hash:5].bundle.js',
         path: `${__dirname}/dist/`,
         publicPath: ASSET_PATH
     },
